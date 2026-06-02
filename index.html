@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phebe Travel – Premium Flight Booking & Travel Consultancy</title>
+  <meta name="description" content="Book flights, get visa assistance, and plan your perfect journey with Phebe Consultancy & Educational Management Services.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { navy: '#0F4C81', 'navy-dark': '#0a3057', gold: '#F4B400' }, fontFamily: { poppins: ['Poppins','sans-serif'], inter: ['Inter','sans-serif'] } } }
+    }
+  </script>
+</head>
+<body>
+  <div id="main-nav"></div>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center overflow-hidden" style="background: linear-gradient(135deg, #0a3057 0%, #0F4C81 50%, #1a6bb5 100%);">
+    <!-- Animated background elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-20 left-10 w-64 h-64 bg-gold/5 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-300/5 rounded-full blur-3xl animate-pulse" style="animation-delay:1s"></div>
+      <!-- Dot grid pattern -->
+      <div class="absolute inset-0" style="background-image: radial-gradient(circle, rgba(244,180,0,0.08) 1px, transparent 1px); background-size: 40px 40px;"></div>
+      <!-- Flying plane -->
+      <div class="absolute top-1/3 left-0 plane-fly" style="animation-delay:2s;">
+        <svg class="w-12 h-12 text-white/10" fill="currentColor" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+      </div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+      <div class="text-center mb-14">
+        <div class="inline-flex items-center gap-2 bg-gold/15 border border-gold/25 rounded-full px-5 py-2 mb-6">
+          <span class="w-2 h-2 bg-gold rounded-full animate-pulse"></span>
+          <span class="text-gold font-inter text-sm font-medium">Nigeria's Most Trusted Travel Partner</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-poppins font-black text-white leading-tight mb-6">
+          Your World,<br>
+          <span class="text-gradient">Our Expertise</span>
+        </h1>
+        <p class="text-white/70 font-inter text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          From Lagos to London, Abuja to Amsterdam — we make every journey seamless, affordable, and unforgettable.
+        </p>
+      </div>
+
+      <!-- Booking Form Card -->
+      <div class="max-w-5xl mx-auto glass rounded-3xl p-6 md:p-8 shadow-2xl">
+        <!-- Trip type tabs -->
+        <div class="flex gap-2 mb-6">
+          <button onclick="setTripType(this,'oneway')" class="trip-btn active-trip px-5 py-2.5 rounded-full font-inter text-sm font-semibold bg-gold text-navy-dark transition-all" id="tab-oneway">One Way</button>
+          <button onclick="setTripType(this,'round')" class="trip-btn px-5 py-2.5 rounded-full font-inter text-sm font-semibold text-white/70 hover:text-white hover:bg-white/10 transition-all" id="tab-round">Round Trip</button>
+          <button onclick="setTripType(this,'multi')" class="trip-btn px-5 py-2.5 rounded-full font-inter text-sm font-semibold text-white/70 hover:text-white hover:bg-white/10 transition-all" id="tab-multi">Multi-City</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- From -->
+          <div class="lg:col-span-1">
+            <label class="form-label text-white/60">From</label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gold">✈</span>
+              <input type="text" class="form-input pl-9 bg-white/10 border-white/20 text-white placeholder-white/40 focus:border-gold" placeholder="City or airport" value="Lagos (LOS)">
+            </div>
+          </div>
+          <!-- Swap -->
+          <div class="lg:col-span-1">
+            <label class="form-label text-white/60">To</label>
+            <div class="relative">
+              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gold">🏁</span>
+              <input type="text" class="form-input pl-9 bg-white/10 border-white/20 text-white placeholder-white/40 focus:border-gold" placeholder="City or airport">
+            </div>
+          </div>
+          <!-- Date -->
+          <div>
+            <label class="form-label text-white/60">Departure Date</label>
+            <input type="date" class="form-input bg-white/10 border-white/20 text-white focus:border-gold" style="color-scheme:dark">
+          </div>
+          <!-- Passengers -->
+          <div>
+            <label class="form-label text-white/60">Passengers</label>
+            <select class="form-input bg-white/10 border-white/20 text-white focus:border-gold">
+              <option class="text-dark">1 Adult</option>
+              <option class="text-dark">2 Adults</option>
+              <option class="text-dark">2 Adults, 1 Child</option>
+              <option class="text-dark">2 Adults, 2 Children</option>
+              <option class="text-dark">Group (5+)</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="returnDate" class="hidden mt-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="form-label text-white/60">Return Date</label>
+              <input type="date" class="form-input bg-white/10 border-white/20 text-white focus:border-gold" style="color-scheme:dark">
+            </div>
+            <div>
+              <label class="form-label text-white/60">Class</label>
+              <select class="form-input bg-white/10 border-white/20 text-white focus:border-gold">
+                <option class="text-dark">Economy</option>
+                <option class="text-dark">Business Class</option>
+                <option class="text-dark">First Class</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-4 items-center justify-between">
+          <p class="text-white/40 font-inter text-xs">✓ No booking fees &nbsp; ✓ Best price guarantee &nbsp; ✓ 24/7 support</p>
+          <a href="flights.html" class="btn-primary text-base">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            Search Flights
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 max-w-3xl mx-auto">
+        <div class="text-center">
+          <div class="stat-number">5,000+</div>
+          <p class="text-white/50 font-inter text-xs mt-1">Happy Travelers</p>
+        </div>
+        <div class="text-center">
+          <div class="stat-number">120+</div>
+          <p class="text-white/50 font-inter text-xs mt-1">Destinations</p>
+        </div>
+        <div class="text-center">
+          <div class="stat-number">50+</div>
+          <p class="text-white/50 font-inter text-xs mt-1">Airlines</p>
+        </div>
+        <div class="text-center">
+          <div class="stat-number">98%</div>
+          <p class="text-white/50 font-inter text-xs mt-1">Satisfaction Rate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section-py bg-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 reveal">
+        <span class="badge badge-navy mb-4">What We Offer</span>
+        <h2 class="text-4xl md:text-5xl font-poppins font-bold text-dark mb-4">Complete Travel Services</h2>
+        <p class="text-slate-500 font-inter text-lg max-w-2xl mx-auto">Everything you need for a perfect journey, all under one roof.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Service cards -->
+        <div class="reveal reveal-delay-1 card-hover bg-white rounded-2xl p-8 border border-slate-100 shadow-sm group">
+          <div class="w-14 h-14 bg-navy/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-navy transition-all">
+            <span class="text-2xl">✈️</span>
+          </div>
+          <h3 class="font-poppins font-bold text-xl text-dark mb-3">Flight Booking</h3>
+          <p class="font-inter text-slate-500 text-sm leading-relaxed mb-4">Compare fares from 50+ airlines. Book domestic and international flights at the best prices.</p>
+          <a href="flights.html" class="text-navy font-inter font-semibold text-sm hover:text-gold transition-all flex items-center gap-2">Book a Flight →</a>
+        </div>
+
+        <div class="reveal reveal-delay-2 card-hover bg-white rounded-2xl p-8 border border-slate-100 shadow-sm group">
+          <div class="w-14 h-14 bg-navy/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-navy transition-all">
+            <span class="text-2xl">💼</span>
+          </div>
+          <h3 class="font-poppins font-bold text-xl text-dark mb-3">Travel Consultation</h3>
+          <p class="font-inter text-slate-500 text-sm leading-relaxed mb-4">Get expert travel advice for business trips, student travel, family vacations, and honeymoons.</p>
+          <a href="consultation.html" class="text-navy font-inter font-semibold text-sm hover:text-gold transition-all flex items-center gap-2">Book Consultation →</a>
+        </div>
+
+        <div class="reveal reveal-delay-3 card-hover bg-white rounded-2xl p-8 border border-slate-100 shadow-sm group">
+          <div class="w-14 h-14 bg-navy/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-navy transition-all">
+            <span class="text-2xl">📋</span>
+          </div>
+          <h3 class="font-poppins font-bold text-xl text-dark mb-3">Visa Assistance</h3>
+          <p class="font-inter text-slate-500 text-sm leading-relaxed mb-4">Complete visa application support. We help with documents, embassy appointments, and tracking.</p>
+          <a href="visa.html" class="text-navy font-inter font-semibold text-sm hover:text-gold transition-all flex items-center gap-2">Get Visa Help →</a>
+        </div>
+
+        <div class="reveal reveal-delay-1 card-hover bg-white rounded-2xl p-8 border border-slate-100 shadow-sm group">
+          <div class="w-14 h-14 bg-navy/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-navy transition-all">
+            <span class="text-2xl">🌍</span>
+          </div>
+          <h3 class="font-poppins font-bold text-xl text-dark mb-3">Travel Packages</h3>
+          <p class="font-inter text-slate-500 text-sm leading-relaxed mb-4">Curated holiday packages combining flights, hotels, and tours for the best value.</p>
+          <a href="packages.html" class="text-navy font-inter font-semibold text-sm hover:text-gold transition-all flex items-center gap-2">View Packages →</a>
+        </div>
+
+        <div class="reveal reveal-delay-2 card-hover bg-white rounded-2xl p-8 border border-slate-100 shadow-sm group">
+          <div class="w-14 h-14 bg-navy/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-navy transition-all">
+            <span class="text-2xl">🎓</span>
+          </div>
+          <h3 class="font-poppins font-bold text-xl text-dark mb-3">Student Travel</h3>
+          <p class="font-inter text-slate-500 text-sm leading-relaxed mb-4">Specialized support for students traveling abroad — admissions letters, student visas, and tickets.</p>
+          <a href="consultation.html" class="text-navy font-inter font-semibold text-sm hover:text-gold transition-all flex items-center gap-2">Learn More →</a>
+        </div>
+
+        <div class="reveal reveal-delay-3 card-hover bg-white rounded-2xl p-8 border border-slate-100 shadow-sm group">
+          <div class="w-14 h-14 bg-navy/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-navy transition-all">
+            <span class="text-2xl">🏢</span>
+          </div>
+          <h3 class="font-poppins font-bold text-xl text-dark mb-3">Corporate Travel</h3>
+          <p class="font-inter text-slate-500 text-sm leading-relaxed mb-4">Tailored travel management solutions for businesses — bulk bookings, corporate rates, and reporting.</p>
+          <a href="consultation.html" class="text-navy font-inter font-semibold text-sm hover:text-gold transition-all flex items-center gap-2">Get Started →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED DESTINATIONS -->
+  <section class="section-py bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 reveal">
+        <div>
+          <span class="badge badge-gold mb-4">Popular Destinations</span>
+          <h2 class="text-4xl md:text-5xl font-poppins font-bold text-dark">Dream Destinations</h2>
+        </div>
+        <a href="destinations.html" class="mt-4 md:mt-0 text-navy font-inter font-semibold hover:text-gold transition-all flex items-center gap-2">View All Destinations →</a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Destination cards with CSS gradients instead of real images -->
+        <div class="reveal reveal-delay-1 card-hover rounded-3xl overflow-hidden relative h-80 group cursor-pointer" onclick="window.location='destinations.html'">
+          <div class="absolute inset-0" style="background: linear-gradient(135deg, #1a4480 0%, #2563eb 50%, #7c3aed 100%);"></div>
+          <div class="absolute inset-0 flex items-end p-6">
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);"></div>
+            <div class="relative">
+              <div class="text-4xl mb-2">🗼</div>
+              <h3 class="text-white font-poppins font-bold text-2xl">Paris, France</h3>
+              <p class="text-white/70 font-inter text-sm">The City of Light & Love</p>
+              <div class="mt-3 flex items-center gap-3">
+                <span class="bg-gold text-navy-dark font-bold text-xs px-3 py-1.5 rounded-full font-inter">From ₦850,000</span>
+                <span class="text-white/60 text-xs font-inter">Round Trip</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-2 card-hover rounded-3xl overflow-hidden relative h-80 group cursor-pointer" onclick="window.location='destinations.html'">
+          <div class="absolute inset-0" style="background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #d97706 100%);"></div>
+          <div class="absolute inset-0 flex items-end p-6">
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);"></div>
+            <div class="relative">
+              <div class="text-4xl mb-2">🏛️</div>
+              <h3 class="text-white font-poppins font-bold text-2xl">Dubai, UAE</h3>
+              <p class="text-white/70 font-inter text-sm">City of Gold & Luxury</p>
+              <div class="mt-3 flex items-center gap-3">
+                <span class="bg-gold text-navy-dark font-bold text-xs px-3 py-1.5 rounded-full font-inter">From ₦520,000</span>
+                <span class="text-white/60 text-xs font-inter">Round Trip</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-3 card-hover rounded-3xl overflow-hidden relative h-80 group cursor-pointer" onclick="window.location='destinations.html'">
+          <div class="absolute inset-0" style="background: linear-gradient(135deg, #065f46 0%, #059669 50%, #10b981 100%);"></div>
+          <div class="absolute inset-0 flex items-end p-6">
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);"></div>
+            <div class="relative">
+              <div class="text-4xl mb-2">🗽</div>
+              <h3 class="text-white font-poppins font-bold text-2xl">New York, USA</h3>
+              <p class="text-white/70 font-inter text-sm">The City That Never Sleeps</p>
+              <div class="mt-3 flex items-center gap-3">
+                <span class="bg-gold text-navy-dark font-bold text-xs px-3 py-1.5 rounded-full font-inter">From ₦1,200,000</span>
+                <span class="text-white/60 text-xs font-inter">Round Trip</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section-py" style="background: linear-gradient(135deg, #0a3057 0%, #0F4C81 100%);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 reveal">
+        <span class="badge mb-4" style="background:rgba(244,180,0,0.15);color:#F4B400;border:1px solid rgba(244,180,0,0.3);">Why Choose Phebe</span>
+        <h2 class="text-4xl md:text-5xl font-poppins font-bold text-white mb-4">Travel with Confidence</h2>
+        <p class="text-white/60 font-inter text-lg max-w-2xl mx-auto">We've built our reputation on trust, expertise, and delivering exceptional travel experiences.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="reveal reveal-delay-1 glass rounded-2xl p-6 text-center">
+          <div class="text-4xl mb-4">🏆</div>
+          <h3 class="font-poppins font-bold text-white text-lg mb-2">IATA Accredited</h3>
+          <p class="text-white/50 font-inter text-sm">Fully accredited by the International Air Transport Association.</p>
+        </div>
+        <div class="reveal reveal-delay-2 glass rounded-2xl p-6 text-center">
+          <div class="text-4xl mb-4">💰</div>
+          <h3 class="font-poppins font-bold text-white text-lg mb-2">Best Price Guarantee</h3>
+          <p class="text-white/50 font-inter text-sm">We match any lower price you find. Your savings are our priority.</p>
+        </div>
+        <div class="reveal reveal-delay-3 glass rounded-2xl p-6 text-center">
+          <div class="text-4xl mb-4">📞</div>
+          <h3 class="font-poppins font-bold text-white text-lg mb-2">24/7 Support</h3>
+          <p class="text-white/50 font-inter text-sm">Our travel experts are available around the clock to assist you.</p>
+        </div>
+        <div class="reveal reveal-delay-4 glass rounded-2xl p-6 text-center">
+          <div class="text-4xl mb-4">🔒</div>
+          <h3 class="font-poppins font-bold text-white text-lg mb-2">Secure Payments</h3>
+          <p class="text-white/50 font-inter text-sm">All transactions are encrypted and 100% secure. Book with peace of mind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section-py bg-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 reveal">
+        <span class="badge badge-navy mb-4">Testimonials</span>
+        <h2 class="text-4xl md:text-5xl font-poppins font-bold text-dark">What Travelers Say</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="reveal reveal-delay-1 bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+          <div class="stars mb-4">★★★★★</div>
+          <p class="font-inter text-slate-600 text-sm leading-relaxed mb-6">"Phebe got me the best deal to London I've ever seen. Their visa team handled everything perfectly. I'll never book with anyone else again!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-navy rounded-full flex items-center justify-center text-white font-poppins font-bold">A</div>
+            <div>
+              <div class="font-poppins font-semibold text-dark text-sm">Adaeze Okonkwo</div>
+              <div class="text-slate-400 font-inter text-xs">Lagos, Nigeria</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2 bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+          <div class="stars mb-4">★★★★★</div>
+          <p class="font-inter text-slate-600 text-sm leading-relaxed mb-6">"As a student heading to Canada for university, I was stressed about everything. Phebe made the entire process so smooth — from my visa to my flight!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center text-navy-dark font-poppins font-bold">E</div>
+            <div>
+              <div class="font-poppins font-semibold text-dark text-sm">Emeka Chukwudi</div>
+              <div class="text-slate-400 font-inter text-xs">Abuja, Nigeria</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-3 bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
+          <div class="stars mb-4">★★★★★</div>
+          <p class="font-inter text-slate-600 text-sm leading-relaxed mb-6">"Our company uses Phebe for all corporate travel. The team is professional, fast, and always gets us the best rates. Highly recommended for businesses!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-poppins font-bold">F</div>
+            <div>
+              <div class="font-poppins font-semibold text-dark text-sm">Funmilayo Adeleke</div>
+              <div class="text-slate-400 font-inter text-xs">Port Harcourt, Nigeria</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AIRLINE PARTNERS -->
+  <section class="py-16 bg-white border-y border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-slate-400 font-inter text-sm uppercase tracking-widest mb-10 reveal">Trusted Airline Partners</p>
+      <div class="flex flex-wrap items-center justify-center gap-12 reveal">
+        <div class="airline-logo font-poppins font-black text-navy text-xl tracking-tight">EMIRATES</div>
+        <div class="airline-logo font-poppins font-black text-navy text-xl tracking-tight">LUFTHANSA</div>
+        <div class="airline-logo font-poppins font-black text-navy text-xl tracking-tight">QATAR</div>
+        <div class="airline-logo font-poppins font-black text-navy text-xl tracking-tight">AIR FRANCE</div>
+        <div class="airline-logo font-poppins font-black text-navy text-xl tracking-tight">BRITISH</div>
+        <div class="airline-logo font-poppins font-black text-navy text-xl tracking-tight">ETHIOPIAN</div>
+        <div class="airline-logo font-poppins font-black text-navy text-xl tracking-tight">KENYA AIR</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-py bg-gold relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle, #0F4C81 1px, transparent 1px); background-size: 30px 30px;"></div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <h2 class="text-4xl md:text-5xl font-poppins font-black text-navy-dark mb-4">Ready to Take Off?</h2>
+      <p class="text-navy-dark/70 font-inter text-lg mb-8 max-w-2xl mx-auto">Book your dream trip today. Our travel experts are standing by to make your journey perfect.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="flights.html" class="btn-navy text-base font-inter">
+          ✈ Book a Flight
+        </a>
+        <a href="contact.html" class="bg-transparent border-2 border-navy-dark text-navy-dark font-semibold font-inter px-8 py-4 rounded-full hover:bg-navy-dark hover:text-white transition-all">
+          Talk to an Expert
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div id="main-footer"></div>
+  <script src="nav.js"></script>
+  <script>
+    function setTripType(btn, type) {
+      document.querySelectorAll('.trip-btn').forEach(b => {
+        b.classList.remove('bg-gold','text-navy-dark');
+        b.classList.add('text-white/70','hover:text-white');
+      });
+      btn.classList.add('bg-gold','text-navy-dark');
+      btn.classList.remove('text-white/70','hover:text-white');
+      document.getElementById('returnDate').classList.toggle('hidden', type === 'oneway' || type === 'multi');
+    }
+  </script>
+</body>
+</html>

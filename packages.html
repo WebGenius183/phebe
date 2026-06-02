@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Packages – Phebe Travel</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:'#0F4C81','navy-dark':'#0a3057',gold:'#F4B400'},fontFamily:{poppins:['Poppins','sans-serif'],inter:['Inter','sans-serif']}}}}</script>
+</head>
+<body>
+  <div id="main-nav"></div>
+
+  <section class="page-hero">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="badge mb-4" style="background:rgba(244,180,0,0.15);color:#F4B400;border:1px solid rgba(244,180,0,0.3);">🌍 Travel Packages</span>
+      <h1 class="text-5xl md:text-6xl font-poppins font-black text-white mb-4">Curated <span class="text-gradient">Travel Packages</span></h1>
+      <p class="text-white/60 font-inter text-lg max-w-2xl mx-auto">All-inclusive holidays combining flights, hotels, tours, and transfers — handpicked by our travel experts.</p>
+    </div>
+  </section>
+
+  <!-- Filter Tabs -->
+  <section class="bg-white border-b border-slate-100 sticky top-20 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex gap-2 overflow-x-auto py-4 scrollbar-hide">
+        <button onclick="filterPkgs('all',this)" class="pkg-filter whitespace-nowrap px-5 py-2.5 rounded-full font-inter text-sm font-semibold bg-navy text-white transition-all">All Packages</button>
+        <button onclick="filterPkgs('international',this)" class="pkg-filter whitespace-nowrap px-5 py-2.5 rounded-full font-inter text-sm font-semibold text-slate-500 bg-slate-100 hover:bg-navy hover:text-white transition-all">🌍 International</button>
+        <button onclick="filterPkgs('domestic',this)" class="pkg-filter whitespace-nowrap px-5 py-2.5 rounded-full font-inter text-sm font-semibold text-slate-500 bg-slate-100 hover:bg-navy hover:text-white transition-all">🇳🇬 Domestic</button>
+        <button onclick="filterPkgs('honeymoon',this)" class="pkg-filter whitespace-nowrap px-5 py-2.5 rounded-full font-inter text-sm font-semibold text-slate-500 bg-slate-100 hover:bg-navy hover:text-white transition-all">💑 Honeymoon</button>
+        <button onclick="filterPkgs('family',this)" class="pkg-filter whitespace-nowrap px-5 py-2.5 rounded-full font-inter text-sm font-semibold text-slate-500 bg-slate-100 hover:bg-navy hover:text-white transition-all">👨‍👩‍👧‍👦 Family</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-py bg-light">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="packagesGrid">
+
+        <!-- Dubai Package -->
+        <div class="pkg-card reveal reveal-delay-1" data-category="international">
+          <div class="card-hover bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm">
+            <div class="relative h-56" style="background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #d97706 100%);">
+              <div class="absolute inset-0 flex items-center justify-center text-7xl">🏙️</div>
+              <div class="absolute top-4 left-4"><span class="badge badge-gold">Most Popular</span></div>
+              <div class="absolute top-4 right-4"><span class="badge" style="background:rgba(0,0,0,0.4);color:white;border:1px solid rgba(255,255,255,0.2)">5 Days</span></div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-poppins font-bold text-dark text-xl mb-1">Dubai Discovery</h3>
+              <p class="text-slate-400 font-inter text-sm mb-4">Dubai, UAE • International</p>
+              <ul class="space-y-1.5 mb-5">
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Round-trip flights (Economy)</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> 4-star hotel (4 nights)</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Burj Khalifa & Desert Safari</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Airport transfers</li>
+              </ul>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="font-poppins font-black text-2xl text-navy">₦680,000</span>
+                  <span class="text-slate-400 font-inter text-xs"> /person</span>
+                </div>
+                <a href="contact.html" class="btn-navy py-2 px-5 text-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paris Honeymoon -->
+        <div class="pkg-card reveal reveal-delay-2" data-category="honeymoon international">
+          <div class="card-hover bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm">
+            <div class="relative h-56" style="background: linear-gradient(135deg, #7c3aed 0%, #db2777 50%, #f97316 100%);">
+              <div class="absolute inset-0 flex items-center justify-center text-7xl">🗼</div>
+              <div class="absolute top-4 left-4"><span class="badge" style="background:rgba(219,39,119,0.9);color:white;border:none">💑 Honeymoon</span></div>
+              <div class="absolute top-4 right-4"><span class="badge" style="background:rgba(0,0,0,0.4);color:white;border:1px solid rgba(255,255,255,0.2)">7 Days</span></div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-poppins font-bold text-dark text-xl mb-1">Paris Romance Package</h3>
+              <p class="text-slate-400 font-inter text-sm mb-4">Paris, France • Honeymoon</p>
+              <ul class="space-y-1.5 mb-5">
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Business class flights</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> 5-star boutique hotel (6 nights)</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Seine River cruise & Eiffel dinner</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Champagne welcome & spa access</li>
+              </ul>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="font-poppins font-black text-2xl text-navy">₦2,100,000</span>
+                  <span class="text-slate-400 font-inter text-xs"> /couple</span>
+                </div>
+                <a href="contact.html" class="btn-navy py-2 px-5 text-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kenya Safari Family -->
+        <div class="pkg-card reveal reveal-delay-3" data-category="family international">
+          <div class="card-hover bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm">
+            <div class="relative h-56" style="background: linear-gradient(135deg, #065f46 0%, #16a34a 50%, #ca8a04 100%);">
+              <div class="absolute inset-0 flex items-center justify-center text-7xl">🦁</div>
+              <div class="absolute top-4 left-4"><span class="badge" style="background:rgba(21,128,61,0.9);color:white;border:none">👨‍👩‍👧‍👦 Family</span></div>
+              <div class="absolute top-4 right-4"><span class="badge" style="background:rgba(0,0,0,0.4);color:white;border:1px solid rgba(255,255,255,0.2)">8 Days</span></div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-poppins font-bold text-dark text-xl mb-1">Kenya Safari Adventure</h3>
+              <p class="text-slate-400 font-inter text-sm mb-4">Nairobi & Maasai Mara, Kenya • Family</p>
+              <ul class="space-y-1.5 mb-5">
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Round-trip flights (2 adults + 2 kids)</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Safari lodge accommodation</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Daily game drives & bush dinners</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Full board meals included</li>
+              </ul>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="font-poppins font-black text-2xl text-navy">₦1,850,000</span>
+                  <span class="text-slate-400 font-inter text-xs"> /family</span>
+                </div>
+                <a href="contact.html" class="btn-navy py-2 px-5 text-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Abuja Domestic -->
+        <div class="pkg-card reveal reveal-delay-1" data-category="domestic">
+          <div class="card-hover bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm">
+            <div class="relative h-56" style="background: linear-gradient(135deg, #1d4ed8 0%, #0f4c81 50%, #075985 100%);">
+              <div class="absolute inset-0 flex items-center justify-center text-7xl">🏛️</div>
+              <div class="absolute top-4 left-4"><span class="badge badge-navy" style="background:rgba(15,76,129,0.9);color:white;border:none">🇳🇬 Domestic</span></div>
+              <div class="absolute top-4 right-4"><span class="badge" style="background:rgba(0,0,0,0.4);color:white;border:1px solid rgba(255,255,255,0.2)">3 Days</span></div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-poppins font-bold text-dark text-xl mb-1">Abuja City Break</h3>
+              <p class="text-slate-400 font-inter text-sm mb-4">Abuja, Nigeria • Domestic</p>
+              <ul class="space-y-1.5 mb-5">
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Return flights Lagos–Abuja</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> 4-star hotel (2 nights)</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Aso Rock & Millennium Park tour</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Airport transfers</li>
+              </ul>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="font-poppins font-black text-2xl text-navy">₦185,000</span>
+                  <span class="text-slate-400 font-inter text-xs"> /person</span>
+                </div>
+                <a href="contact.html" class="btn-navy py-2 px-5 text-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- London International -->
+        <div class="pkg-card reveal reveal-delay-2" data-category="international">
+          <div class="card-hover bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm">
+            <div class="relative h-56" style="background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);">
+              <div class="absolute inset-0 flex items-center justify-center text-7xl">🎡</div>
+              <div class="absolute top-4 left-4"><span class="badge badge-gold">New Package</span></div>
+              <div class="absolute top-4 right-4"><span class="badge" style="background:rgba(0,0,0,0.4);color:white;border:1px solid rgba(255,255,255,0.2)">6 Days</span></div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-poppins font-bold text-dark text-xl mb-1">London Explorer</h3>
+              <p class="text-slate-400 font-inter text-sm mb-4">London, UK • International</p>
+              <ul class="space-y-1.5 mb-5">
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Round-trip Economy flights</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Central London hotel (5 nights)</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Oyster card & city tour</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Travel insurance included</li>
+              </ul>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="font-poppins font-black text-2xl text-navy">₦1,050,000</span>
+                  <span class="text-slate-400 font-inter text-xs"> /person</span>
+                </div>
+                <a href="contact.html" class="btn-navy py-2 px-5 text-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Maldives Honeymoon -->
+        <div class="pkg-card reveal reveal-delay-3" data-category="honeymoon international">
+          <div class="card-hover bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm">
+            <div class="relative h-56" style="background: linear-gradient(135deg, #0e7490 0%, #0891b2 50%, #38bdf8 100%);">
+              <div class="absolute inset-0 flex items-center justify-center text-7xl">🏝️</div>
+              <div class="absolute top-4 left-4"><span class="badge" style="background:rgba(219,39,119,0.9);color:white;border:none">💑 Honeymoon</span></div>
+              <div class="absolute top-4 right-4"><span class="badge" style="background:rgba(0,0,0,0.4);color:white;border:1px solid rgba(255,255,255,0.2)">7 Days</span></div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-poppins font-bold text-dark text-xl mb-1">Maldives Escape</h3>
+              <p class="text-slate-400 font-inter text-sm mb-4">Malé, Maldives • Honeymoon</p>
+              <ul class="space-y-1.5 mb-5">
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Return flights to Malé</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Overwater bungalow (6 nights)</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> All meals & snorkeling included</li>
+                <li class="flex items-center gap-2 text-slate-500 font-inter text-xs"><span class="text-green-500">✓</span> Sunset cruise & rose petal setup</li>
+              </ul>
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="font-poppins font-black text-2xl text-navy">₦3,200,000</span>
+                  <span class="text-slate-400 font-inter text-xs"> /couple</span>
+                </div>
+                <a href="contact.html" class="btn-navy py-2 px-5 text-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Package CTA -->
+  <section class="section-py" style="background: linear-gradient(135deg, #0a3057 0%, #0F4C81 100%);">
+    <div class="max-w-4xl mx-auto px-4 text-center reveal">
+      <div class="text-5xl mb-6">🎯</div>
+      <h2 class="text-4xl font-poppins font-bold text-white mb-4">Need a Custom Package?</h2>
+      <p class="text-white/60 font-inter text-lg max-w-2xl mx-auto mb-8">Tell us your destination, budget, and travel dates. Our experts will craft a personalized itinerary just for you.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="consultation.html" class="btn-primary text-base">📞 Plan My Trip</a>
+        <a href="contact.html" class="btn-secondary text-base">💬 Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="main-footer"></div>
+  <script src="nav.js"></script>
+  <script>
+    function filterPkgs(cat, btn) {
+      document.querySelectorAll('.pkg-filter').forEach(b => {
+        b.classList.remove('bg-navy','text-white');
+        b.classList.add('text-slate-500','bg-slate-100');
+      });
+      btn.classList.add('bg-navy','text-white');
+      btn.classList.remove('text-slate-500','bg-slate-100');
+
+      document.querySelectorAll('.pkg-card').forEach(card => {
+        if (cat === 'all' || card.dataset.category.includes(cat)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
