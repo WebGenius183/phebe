@@ -56,11 +56,8 @@ function renderNav() {
 
         <!-- Right Actions -->
         <div class="hidden lg:flex items-center space-x-3">
-          <button id="darkModeToggle" class="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all" title="Toggle dark mode">
-            <svg class="w-4 h-4" id="darkIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-          </button>
           <a href="flights.html" class="bg-gold hover:bg-yellow-400 text-navy-dark font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-200 font-inter shadow-lg hover:shadow-gold/30 hover:-translate-y-0.5">
-            Book Now
+            Book a Consultation
           </a>
         </div>
 
@@ -86,7 +83,7 @@ function renderNav() {
         <a href="blog.html" class="block px-4 py-3 text-white hover:text-gold hover:bg-white/5 rounded-lg font-inter text-sm transition-all">Blog</a>
         <a href="faq.html" class="block px-4 py-3 text-white hover:text-gold hover:bg-white/5 rounded-lg font-inter text-sm transition-all">FAQ</a>
         <a href="contact.html" class="block px-4 py-3 text-white hover:text-gold hover:bg-white/5 rounded-lg font-inter text-sm transition-all">Contact</a>
-        <a href="flights.html" class="block px-4 py-3 bg-gold text-navy-dark font-semibold rounded-lg font-inter text-sm text-center mt-4">Book Now</a>
+        <a href="flights.html" class="block px-4 py-3 bg-gold text-navy-dark font-semibold rounded-lg font-inter text-sm text-center mt-4">Book a consultation</a>
       </div>
     </div>
   </nav>`;
@@ -194,17 +191,17 @@ function renderFooter() {
         <div>
           <h4 class="text-white font-semibold font-poppins mb-5 text-sm uppercase tracking-wider">Contact Us</h4>
           <div class="space-y-4">
-            <div class="flex items-start gap-3">
+            <!--<div class="flex items-start gap-3">
               <span class="text-gold mt-0.5">📍</span>
               <span class="text-white/50 font-inter text-sm">14 Airport Road, Victoria Island, Lagos, Nigeria</span>
-            </div>
+            </div> -->
             <div class="flex items-center gap-3">
               <span class="text-gold">📞</span>
-              <a href="tel:+2348000000000" class="text-white/50 hover:text-gold font-inter text-sm transition-all">+234 800 000 0000</a>
+              <a href="tel:+2349016520888" class="text-white/50 hover:text-gold font-inter text-sm transition-all">+234 901 652 0888</a>
             </div>
             <div class="flex items-center gap-3">
               <span class="text-gold">✉️</span>
-              <a href="mailto:hello@phebetravels.com" class="text-white/50 hover:text-gold font-inter text-sm transition-all">hello@phebetravels.com</a>
+              <a href="mailto:Educationserp@phebetravels.com" class="text-white/50 hover:text-gold font-inter text-sm transition-all">hello@phebetravels.com</a>
             </div>
             <div class="flex items-center gap-3">
               <span class="text-gold">🕐</span>
