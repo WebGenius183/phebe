@@ -15,11 +15,9 @@ function renderNav() {
         <!-- Logo -->
         <a href="index.html" class="flex items-center space-x-3">
           <div class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center">
-            <span class="text-gold font-bold text-xl font-poppins">P</span>
+            <img class="rounded-full " src="./phebe.jpeg">
           </div>
           <div>
-            <div class="text-white font-bold text-xl font-poppins tracking-wide">PHEBE</div>
-            <div class="text-gold/80 text-xs font-inter tracking-widest uppercase">Travel & Consultancy</div>
           </div>
         </a>
 
@@ -35,16 +33,16 @@ function renderNav() {
             </button>
             <div class="absolute top-full left-0 mt-2 w-56 bg-navy-dark border border-gold/20 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2">
               <a href="flights.html" class="flex items-center gap-3 px-4 py-3 text-sm text-white hover:text-gold hover:bg-white/5 transition-all">
-                <span class="text-gold">✈</span> Flight Booking
+                 Flight Booking
               </a>
               <a href="consultation.html" class="flex items-center gap-3 px-4 py-3 text-sm text-white hover:text-gold hover:bg-white/5 transition-all">
-                <span class="text-gold">💼</span> Travel Consultation
+                 Travel Consultation
               </a>
               <a href="visa.html" class="flex items-center gap-3 px-4 py-3 text-sm text-white hover:text-gold hover:bg-white/5 transition-all">
-                <span class="text-gold">📋</span> Visa Assistance
+                 Visa Assistance
               </a>
               <a href="packages.html" class="flex items-center gap-3 px-4 py-3 text-sm text-white hover:text-gold hover:bg-white/5 transition-all">
-                <span class="text-gold">🌍</span> Travel Packages
+                 Travel Packages
               </a>
             </div>
           </div>
@@ -192,19 +190,15 @@ function renderFooter() {
           <h4 class="text-white font-semibold font-poppins mb-5 text-sm uppercase tracking-wider">Contact Us</h4>
           <div class="space-y-4">
             <div class="flex items-start gap-3">
-              <span class="text-gold mt-0.5">📍</span>
               <span class="text-white/50 font-inter text-sm">18, Pipeline Road, Ajagbole, Ogun State, Nigeria</span>
             </div>
             <div class="flex items-center gap-3">
-              <span class="text-gold">📞</span>
               <a href="tel:+2349016520888" class="text-white/50 hover:text-gold font-inter text-sm transition-all">+234 901 652 0888</a>
             </div>
             <div class="flex items-center gap-3">
-              <span class="text-gold">✉️</span>
               <a href="mailto:Educationserphebe@gmail.com" class="text-white/50 hover:text-gold font-inter text-sm transition-all">Educationserphebe@gmail.com</a>
             </div>
             <div class="flex items-center gap-3">
-              <span class="text-gold">🕐</span>
               <span class="text-white/50 font-inter text-sm">Mon–Sat: 8am – 8pm</span>
             </div>
           </div>

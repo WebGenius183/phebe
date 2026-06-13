@@ -6,184 +6,67 @@
   <title>Destinations – Phebe Travel</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{navy:'#0F4C81','navy-dark':'#0a3057',gold:'#F4B400'},fontFamily:{poppins:['Poppins','sans-serif'],inter:['Inter','sans-serif']}}}}</script>
+  <script>tailwind.config={theme:{extend:{colors:{navy:'#0F4C81','navy-dark':'#0a3057',gold:'#ffff'},fontFamily:{poppins:['Poppins','sans-serif'],inter:['Inter','sans-serif']}}}}</script>
 </head>
 <body>
   <div id="main-nav"></div>
 
   <section class="page-hero">
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <span class="badge mb-4" style="background:rgba(244,180,0,0.15);color:#F4B400;border:1px solid rgba(244,180,0,0.3);">🌍 Explore</span>
-      <h1 class="text-5xl md:text-6xl font-poppins font-black text-white mb-4">Your World <span class="text-gradient">Awaits</span></h1>
-      <p class="text-white/60 font-inter text-lg max-w-2xl mx-auto">Discover extraordinary destinations across 6 continents. Where will your next adventure take you?</p>
+      <h1 class="text-5xl md:text-6xl font-poppins font-black text-white mb-4">Destinations</h1>
+      <p class="text-white/60 font-inter text-lg max-w-2xl mx-auto">Extraordinary Discovery.</p>
     </div>
   </section>
 
-  <!-- Search & Filter -->
-  <section class="bg-white border-b border-slate-100 py-6">
+  <!-- FEATURED DESTINATIONS -->
+  <section class="section-py bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row gap-4">
-        <div class="flex-1 relative">
-          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">🔍</span>
-          <input type="text" id="destSearch" class="form-input pl-9" placeholder="Search destinations..." oninput="searchDest(this.value)">
+      <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 reveal">
+        <div>
+          <h2 class="text-4xl md:text-3xl font-poppins font-bold text-dark">Trusted Study Destination</h2>
         </div>
-        <div class="flex gap-2 flex-wrap">
-          <button onclick="filterDest('all',this)" class="dest-filter px-4 py-2.5 rounded-full font-inter text-sm font-medium bg-navy text-white transition-all">All</button>
-          <button onclick="filterDest('europe',this)" class="dest-filter px-4 py-2.5 rounded-full font-inter text-sm font-medium bg-slate-100 text-slate-500 hover:bg-navy hover:text-white transition-all">Europe</button>
-          <button onclick="filterDest('africa',this)" class="dest-filter px-4 py-2.5 rounded-full font-inter text-sm font-medium bg-slate-100 text-slate-500 hover:bg-navy hover:text-white transition-all">Africa</button>
-          <button onclick="filterDest('americas',this)" class="dest-filter px-4 py-2.5 rounded-full font-inter text-sm font-medium bg-slate-100 text-slate-500 hover:bg-navy hover:text-white transition-all">Americas</button>
-          <button onclick="filterDest('asia',this)" class="dest-filter px-4 py-2.5 rounded-full font-inter text-sm font-medium bg-slate-100 text-slate-500 hover:bg-navy hover:text-white transition-all">Asia</button>
-        </div>
+        <a href="destinations.html" class="mt-4 md:mt-0 text-navy font-inter font-semibold hover:text-gold transition-all flex items-center gap-2">View All Destinations →</a>
       </div>
-    </div>
-  </section>
 
-  <!-- Destinations Grid -->
-  <section class="section-py bg-light">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" id="destGrid">
-
-        <div class="dest-card reveal reveal-delay-1" data-region="europe" data-name="paris france">
-          <div class="card-hover bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer">
-            <div class="relative h-48" style="background:linear-gradient(135deg,#6366f1,#8b5cf6,#a855f7)">
-              <div class="absolute inset-0 flex items-center justify-center text-6xl">🗼</div>
-              <div class="absolute top-3 right-3"><span class="badge badge-gold text-xs">Europe</span></div>
-            </div>
-            <div class="p-5">
-              <h3 class="font-poppins font-bold text-dark">Paris, France</h3>
-              <p class="text-slate-400 font-inter text-xs mb-3">Eiffel Tower · Louvre · Seine River</p>
-              <div class="flex items-center justify-between">
-                <span class="text-navy font-poppins font-bold text-sm">From ₦850k</span>
-                <a href="flights.html" class="text-xs font-inter font-semibold text-gold hover:text-navy transition-all">Book →</a>
-              </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Destination cards with CSS gradients instead of real images -->
+        <div class="reveal reveal-delay-1 card-hover rounded-3xl overflow-hidden relative h-80 group cursor-pointer" onclick="window.location='destinations.html'">
+          <div class="absolute inset-0" style="background: linear-gradient(135deg, #1a4480 0%, #2563eb 50%, #7c3aed 100%);"></div>
+          <div class="absolute inset-0 flex items-end p-6">
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);">
+              <img src="https://tse4.mm.bing.net/th/id/OIP.DAfXRv1a228A3Y3vnt7quQHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt=""></div>
+            <div class="relative">
+              <h3 class="text-white font-poppins font-bold text-2xl">Study in Australia</h3>
+              <p class="text-white/70 font-inter text-sm">Australia is home to some of the finest research institutions in the world..Read more</p>
             </div>
           </div>
         </div>
 
-        <div class="dest-card reveal reveal-delay-2" data-region="asia" data-name="dubai uae">
-          <div class="card-hover bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer">
-            <div class="relative h-48" style="background:linear-gradient(135deg,#f59e0b,#ef4444,#b45309)">
-              <div class="absolute inset-0 flex items-center justify-center text-6xl">🏙️</div>
-              <div class="absolute top-3 right-3"><span class="badge badge-navy text-xs">Asia</span></div>
+        <div class="reveal reveal-delay-2 card-hover rounded-3xl overflow-hidden relative h-80 group cursor-pointer" onclick="window.location='destinations.html'">
+          <div class="absolute inset-0" style="background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #d97706 100%);"></div>
+          <div class="absolute inset-0 flex items-end p-6">
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 90%);">
+              <img src="https://tse4.mm.bing.net/th/id/OIP.a60iZkm0AyAdSUyHcp32agHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
             </div>
-            <div class="p-5">
-              <h3 class="font-poppins font-bold text-dark">Dubai, UAE</h3>
-              <p class="text-slate-400 font-inter text-xs mb-3">Burj Khalifa · Desert Safari · Gold Souk</p>
-              <div class="flex items-center justify-between">
-                <span class="text-navy font-poppins font-bold text-sm">From ₦520k</span>
-                <a href="flights.html" class="text-xs font-inter font-semibold text-gold hover:text-navy transition-all">Book →</a>
-              </div>
+            <div class="relative">
+              <h3 class="text-white font-poppins font-bold text-2xl">Study in Canada</h3>
+              <p class="text-white/70 font-inter text-sm">For decades, international students have moved to study abroad in Canada for higher education...Read more</p>
             </div>
           </div>
         </div>
 
-        <div class="dest-card reveal reveal-delay-3" data-region="americas" data-name="new york usa">
-          <div class="card-hover bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer">
-            <div class="relative h-48" style="background:linear-gradient(135deg,#1e40af,#1d4ed8,#2563eb)">
-              <div class="absolute inset-0 flex items-center justify-center text-6xl">🗽</div>
-              <div class="absolute top-3 right-3"><span class="badge text-xs" style="background:rgba(30,64,175,0.8);color:white;border:1px solid rgba(255,255,255,0.2)">Americas</span></div>
+        <div class="reveal reveal-delay-3 card-hover rounded-3xl overflow-hidden relative h-80 group cursor-pointer" onclick="window.location='destinations.html'">
+          <div class="absolute inset-0" style="background: linear-gradient(135deg, #065f46 0%, #059669 50%, #10b981 100%);"></div>
+          <div class="absolute inset-0 flex items-end p-6">
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 90%);">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.Vwp9AbV6vprWheWz5q3ibwHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
             </div>
-            <div class="p-5">
-              <h3 class="font-poppins font-bold text-dark">New York, USA</h3>
-              <p class="text-slate-400 font-inter text-xs mb-3">Times Square · Central Park · Broadway</p>
-              <div class="flex items-center justify-between">
-                <span class="text-navy font-poppins font-bold text-sm">From ₦1.2M</span>
-                <a href="flights.html" class="text-xs font-inter font-semibold text-gold hover:text-navy transition-all">Book →</a>
-              </div>
+            <div class="relative">
+              <h3 class="text-white font-poppins font-bold text-2xl">Study In USA</h3>
+              <p class="text-white/70 font-inter text-sm">The top universities provide highly accredited professors, advanced technology and research facilities.</p>
             </div>
           </div>
         </div>
-
-        <div class="dest-card reveal reveal-delay-1" data-region="europe" data-name="london uk england">
-          <div class="card-hover bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer">
-            <div class="relative h-48" style="background:linear-gradient(135deg,#374151,#4b5563,#6b7280)">
-              <div class="absolute inset-0 flex items-center justify-center text-6xl">🎡</div>
-              <div class="absolute top-3 right-3"><span class="badge badge-gold text-xs">Europe</span></div>
-            </div>
-            <div class="p-5">
-              <h3 class="font-poppins font-bold text-dark">London, UK</h3>
-              <p class="text-slate-400 font-inter text-xs mb-3">Big Ben · Tower Bridge · Buckingham Palace</p>
-              <div class="flex items-center justify-between">
-                <span class="text-navy font-poppins font-bold text-sm">From ₦750k</span>
-                <a href="flights.html" class="text-xs font-inter font-semibold text-gold hover:text-navy transition-all">Book →</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="dest-card reveal reveal-delay-2" data-region="africa" data-name="nairobi kenya">
-          <div class="card-hover bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer">
-            <div class="relative h-48" style="background:linear-gradient(135deg,#065f46,#047857,#10b981)">
-              <div class="absolute inset-0 flex items-center justify-center text-6xl">🦁</div>
-              <div class="absolute top-3 right-3"><span class="badge text-xs" style="background:rgba(5,150,105,0.8);color:white;border:1px solid rgba(255,255,255,0.2)">Africa</span></div>
-            </div>
-            <div class="p-5">
-              <h3 class="font-poppins font-bold text-dark">Nairobi, Kenya</h3>
-              <p class="text-slate-400 font-inter text-xs mb-3">Maasai Mara · Amboseli · Diani Beach</p>
-              <div class="flex items-center justify-between">
-                <span class="text-navy font-poppins font-bold text-sm">From ₦280k</span>
-                <a href="flights.html" class="text-xs font-inter font-semibold text-gold hover:text-navy transition-all">Book →</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="dest-card reveal reveal-delay-3" data-region="americas" data-name="toronto canada">
-          <div class="card-hover bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer">
-            <div class="relative h-48" style="background:linear-gradient(135deg,#dc2626,#b91c1c,#991b1b)">
-              <div class="absolute inset-0 flex items-center justify-center text-6xl">🍁</div>
-              <div class="absolute top-3 right-3"><span class="badge text-xs" style="background:rgba(220,38,38,0.8);color:white;border:1px solid rgba(255,255,255,0.2)">Americas</span></div>
-            </div>
-            <div class="p-5">
-              <h3 class="font-poppins font-bold text-dark">Toronto, Canada</h3>
-              <p class="text-slate-400 font-inter text-xs mb-3">CN Tower · Niagara Falls · Kensington Market</p>
-              <div class="flex items-center justify-between">
-                <span class="text-navy font-poppins font-bold text-sm">From ₦1.1M</span>
-                <a href="flights.html" class="text-xs font-inter font-semibold text-gold hover:text-navy transition-all">Book →</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="dest-card reveal reveal-delay-1" data-region="europe" data-name="amsterdam netherlands">
-          <div class="card-hover bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer">
-            <div class="relative h-48" style="background:linear-gradient(135deg,#0d9488,#0891b2,#2563eb)">
-              <div class="absolute inset-0 flex items-center justify-center text-6xl">🌷</div>
-              <div class="absolute top-3 right-3"><span class="badge badge-gold text-xs">Europe</span></div>
-            </div>
-            <div class="p-5">
-              <h3 class="font-poppins font-bold text-dark">Amsterdam, Netherlands</h3>
-              <p class="text-slate-400 font-inter text-xs mb-3">Canal Rings · Rijksmuseum · Keukenhof</p>
-              <div class="flex items-center justify-between">
-                <span class="text-navy font-poppins font-bold text-sm">From ₦780k</span>
-                <a href="flights.html" class="text-xs font-inter font-semibold text-gold hover:text-navy transition-all">Book →</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="dest-card reveal reveal-delay-2" data-region="asia" data-name="singapore">
-          <div class="card-hover bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm group cursor-pointer">
-            <div class="relative h-48" style="background:linear-gradient(135deg,#7c3aed,#6d28d9,#4c1d95)">
-              <div class="absolute inset-0 flex items-center justify-center text-6xl">🦁</div>
-              <div class="absolute top-3 right-3"><span class="badge badge-navy text-xs">Asia</span></div>
-            </div>
-            <div class="p-5">
-              <h3 class="font-poppins font-bold text-dark">Singapore</h3>
-              <p class="text-slate-400 font-inter text-xs mb-3">Gardens by the Bay · Sentosa · Marina Bay Sands</p>
-              <div class="flex items-center justify-between">
-                <span class="text-navy font-poppins font-bold text-sm">From ₦950k</span>
-                <a href="flights.html" class="text-xs font-inter font-semibold text-gold hover:text-navy transition-all">Book →</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div id="noResults" class="hidden text-center py-16">
-        <div class="text-5xl mb-4">🔍</div>
-        <h3 class="font-poppins font-semibold text-dark text-xl mb-2">No destinations found</h3>
-        <p class="text-slate-400 font-inter text-sm">Try a different search term or browse all destinations.</p>
       </div>
     </div>
   </section>
