@@ -47,7 +47,7 @@ function renderNav() {
             </div>
           </div>
 
-          <a href="destinations.html" class="nav-link px-4 py-2 text-sm font-inter font-medium transition-all duration-200 ${isActive('destinations.html')}">Destinations</a>
+          <a href="destinations.html" class="nav-link px-4 py-2 text-sm font-inter font-medium transition-all duration-200 ${isActive('destinations.html')}">Study Abroad</a>
           <a href="blog.html" class="nav-link px-4 py-2 text-sm font-inter font-medium transition-all duration-200 ${isActive('blog.html')}">Blog</a>
           <a href="contact.html" class="nav-link px-4 py-2 text-sm font-inter font-medium transition-all duration-200 ${isActive('contact.html')}">Contact</a>
         </div>
@@ -55,7 +55,7 @@ function renderNav() {
         <!-- Right Actions -->
         <div class="hidden lg:flex items-center space-x-3">
           <a href="flights.html" class="bg-gold hover:bg-blue-300 text-navy-dark font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-200 font-inter shadow-lg hover:shadow-black/50 hover:-translate-y-0.5">
-            Book a Consultation
+            Book Consultation
           </a>
         </div>
 
@@ -77,7 +77,7 @@ function renderNav() {
         <a href="consultation.html" class="block px-4 py-3 text-white hover:text-gold hover:bg-white/5 rounded-lg font-inter text-sm transition-all">💼 Travel Consultation</a>
         <a href="visa.html" class="block px-4 py-3 text-white hover:text-gold hover:bg-white/5 rounded-lg font-inter text-sm transition-all">📋 Visa Assistance</a>
         <a href="packages.html" class="block px-4 py-3 text-white hover:text-gold hover:bg-white/5 rounded-lg font-inter text-sm transition-all">🌍 Travel Packages</a>
-        <a href="destinations.html" class="block px-4 py-3 text-white hover:text-gold hover:bg-white/5 rounded-lg font-inter text-sm transition-all">Destinations</a>
+        <a href="destinations.html" class="block px-4 py-3 text-white hover:text-gold hover:bg-white/5 rounded-lg font-inter text-sm transition-all">Study Abroad</a>
         <a href="blog.html" class="block px-4 py-3 text-white hover:text-gold hover:bg-white/5 rounded-lg font-inter text-sm transition-all">Blog</a>
         <a href="faq.html" class="block px-4 py-3 text-white hover:text-gold hover:bg-white/5 rounded-lg font-inter text-sm transition-all">FAQ</a>
         <a href="contact.html" class="block px-4 py-3 text-white hover:text-gold hover:bg-white/5 rounded-lg font-inter text-sm transition-all">Contact</a>
@@ -168,7 +168,7 @@ function renderFooter() {
             <li><a href="consultation.html" class="text-white/50 hover:text-gold font-inter text-sm transition-all">Travel Consultation</a></li>
             <li><a href="visa.html" class="text-white/50 hover:text-gold font-inter text-sm transition-all">Visa Assistance</a></li>
             <li><a href="packages.html" class="text-white/50 hover:text-gold font-inter text-sm transition-all">Travel Packages</a></li>
-            <li><a href="destinations.html" class="text-white/50 hover:text-gold font-inter text-sm transition-all">Destinations</a></li>
+            <li><a href="destinations.html" class="text-white/50 hover:text-gold font-inter text-sm transition-all">Study Abroad</a></li>
           </ul>
         </div>
 
